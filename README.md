@@ -117,7 +117,7 @@ Les animations sont contrôlées dans `script.js` :
 
 Pour toute question ou personnalisation :
 - **Email** : titouanmouysset@gmail.com
-- **Téléphone** : +33 1 23 45 67 89
+- **Téléphone** : +33 7 66 20 95 01
 
 ## 📄 Licence
 
