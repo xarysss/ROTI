@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiro Network</title>
+    <meta name="description" content="Contactez Tiro Network pour votre projet web. Formulaire de contact, prise de rendez-vous gratuit et support client.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='rocketGrad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23c0c8d8;stop-opacity:1' /><stop offset='100%' style='stop-color:%236c7b95;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='48' fill='%230f0f23' stroke='%23c0c8d8' stroke-width='2'/><path d='M50 20 L35 65 L50 75 L65 65 Z' fill='url(%23rocketGrad)'/><circle cx='50' cy='45' r='8' fill='%23ffffff'/><path d='M35 65 L25 70 M65 65 L75 70' stroke='%23c0c8d8' stroke-width='3' stroke-linecap='round'/><path d='M42 75 L50 85 L58 75' fill='%23a0a8b8'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Futuriste -->
+    <nav class="navbar-futuristic">
+        <div class="nav-glass-container">
+            <!-- Logo Holographique -->
+            <div class="nav-logo-holographic">
+                <a href="index.html" class="logo-hologram">
+                    <div class="logo-hologram-icon">
+                        <i class="fas fa-rocket"></i>
+                        <div class="hologram-glow"></div>
+                    </div>
+                    <div class="logo-hologram-text">
+                        <span class="logo-main-holo">TIRO</span>
+                        <span class="logo-sub-holo">NETWORK</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Menu Navigation Liquid Glass -->
+            <ul class="nav-liquid-menu">
+                <li class="nav-liquid-item">
+                    <a href="index.html" class="nav-liquid-link">
+                        <div class="liquid-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span class="liquid-text">Accueil</span>
+                        <div class="liquid-ripple"></div>
+                    </a>
+                </li>
+                <li class="nav-liquid-item">
+                    <a href="services.html" class="nav-liquid-link">
+                        <div class="liquid-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <span class="liquid-text">Services</span>
+                        <div class="liquid-ripple"></div>
+                    </a>
+                </li>
+                <li class="nav-liquid-item">
+                    <a href="about.html" class="nav-liquid-link">
+                        <div class="liquid-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="liquid-text">À propos</span>
+                        <div class="liquid-ripple"></div>
+                    </a>
+                </li>
+                <li class="nav-liquid-item">
+                    <a href="contact.html" class="nav-liquid-link active cta-liquid">
+                        <div class="liquid-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="liquid-text">Contact</span>
+                        <div class="liquid-ripple"></div>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Actions Futuristes -->
+            <div class="nav-futuristic-actions">
+                <button class="hologram-toggle" id="themeToggle">
+                    <div class="toggle-hologram">
+                        <i class="fas fa-moon"></i>
+                        <div class="toggle-glow"></div>
+                    </div>
+                </button>
+            </div>
+            
+            <!-- Hamburger Holographique -->
+            <div class="hamburger-holographic">
+                <span class="holo-bar"></span>
+                <span class="holo-bar"></span>
+                <span class="holo-bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Contact -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <div class="contact-badge animate-on-scroll">
+                    <div class="badge-icon">
+                        <span>Support</span>
+                    </div>
+                    <span>Collaborons ensemble</span>
+                </div>
+                
+                <h1 class="contact-hero-title animate-on-scroll">
+                    Tu veux exploser ton acquisition ?<br>
+                    <span class="highlight-text">Pose tes questions ou réserve ton audit</span>
+                </h1>
+                
+                <p class="contact-hero-description animate-on-scroll">
+                    On vous répond sous 24h. Pas de blabla, on passe directement à ce<br>
+                    qu'on peut mettre en place pour vous.
+                </p>
+                
+                <div class="contact-hero-actions animate-on-scroll">
+                    <button class="btn-contact-secondary">
+                        Poser mes questions
+                    </button>
+                    <button class="btn-contact-primary">
+                        Audit Gratuit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <!-- Formulaire de contact -->
+                <div class="contact-form-container animate-on-scroll">
+                    <div class="form-header">
+                        <h2>Contactez-nous</h2>
+                        <p>Prêt à lancer votre projet dans l'espace digital ?</p>
+                    </div>
+                    
+                    <form class="contact-form spatial-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Votre e-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Quel service vous intéresse ? *</label>
+                            <div class="service-options">
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="site-vitrine" required>
+                                    <span class="option-text">Site vitrine classique (400€)</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="site-hebergement" required>
+                                    <span class="option-text">Site vitrine + hébergement (500€)</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="support" required>
+                                    <span class="option-text">Hébergement + support client</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activity">Quelle est votre activité *</label>
+                            <select id="activity" name="activity" required>
+                                <option value="">Sélectionnez une catégorie</option>
+                                <option value="ecommerce">E-commerce / Vente en ligne</option>
+                                <option value="restaurant">Restaurant / Hôtellerie</option>
+                                <option value="service">Service local</option>
+                                <option value="professionnel">Profession libérale</option>
+                                <option value="tech">Tech / Startup</option>
+                                <option value="formation">Formation / Éducation</option>
+                                <option value="sante">Santé / Bien-être</option>
+                                <option value="immobilier">Immobilier</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet, vos besoins et vos objectifs..." required></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-spatial">
+                                <span>Envoyer le message</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <p class="form-note">
+                                Nous vous répondons sous 24h
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section Spatiale -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <div class="faq-badge animate-on-scroll">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Support</span>
+                </div>
+                <h2 class="faq-title animate-on-scroll">
+                    Questions fréquentes
+                    <span class="faq-subtitle">Trouvez les réponses à vos questions</span>
+                </h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item animate-on-scroll-scale">
+                    <div class="faq-question">
+                        <div class="question-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="question-content">
+                            <h3>En combien de temps mon site vitrine sera-t-il prêt ?</h3>
+                            <p class="question-preview">Délais de livraison et planning de projet</p>
+                        </div>
+                        <div class="question-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Tout dépend de l'ampleur du projet, mais en moyenne nous livrons un site vitrine optimisé en <strong>15 jours environ</strong>. Cette rapidité est possible grâce à notre méthodologie rodée.</p>
+                            <div class="answer-timeline">
+                                <div class="timeline-item">
+                                    <span class="timeline-phase">Phase 1</span>
+                                    <span class="timeline-duration">1 semaine</span>
+                                    <span class="timeline-desc">Conception graphique</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="timeline-phase">Phase 2</span>
+                                    <span class="timeline-duration">3 jours</span>
+                                    <span class="timeline-desc">Développement technique</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="timeline-phase">Phase 3</span>
+                                    <span class="timeline-duration">5 jours</span>
+                                    <span class="timeline-desc">Ajustements finaux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll-scale">
+                    <div class="faq-question">
+                        <div class="question-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="question-content">
+                            <h3>Proposez-vous une garantie de résultats ?</h3>
+                            <p class="question-preview">Nos engagements et garanties</p>
+                        </div>
+                        <div class="question-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Oui, nous sommes <strong>téllement confiants</strong> dans l'efficacité de nos sites que nous offrons une garantie satisfait ou remboursé sur certaines prestations.</p>
+                            <div class="guarantee-badges">
+                                <div class="guarantee-badge">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Garantie satisfait ou remboursé</span>
+                                </div>
+                                <div class="guarantee-badge">
+                                    <i class="fas fa-redo"></i>
+                                    <span>Travail gratuit jusqu'aux objectifs</span>
+                                </div>
+                                <div class="guarantee-badge">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Engagement mutuel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll-scale">
+                    <div class="faq-question">
+                        <div class="question-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="question-content">
+                            <h3>Pourquoi choisir Tiro Network plutôt qu'un freelance ?</h3>
+                            <p class="question-preview">Avantages de notre équipe</p>
+                        </div>
+                        <div class="question-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Tiro Network, c'est une <strong>équipe dédiée</strong> avec des compétences complémentaires là où un freelance est seul.</p>
+                            <div class="advantages-grid">
+                                <div class="advantage-item">
+                                    <i class="fas fa-brain"></i>
+                                    <h4>Expertise collective</h4>
+                                    <p>Plusieurs cerveaux = meilleures solutions</p>
+                                </div>
+                                <div class="advantage-item">
+                                    <i class="fas fa-headset"></i>
+                                    <h4>Support continu</h4>
+                                    <p>Nous restons à vos côtés après la livraison</p>
+                                </div>
+                                <div class="advantage-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <h4>Flexibilité & Force</h4>
+                                    <p>Agilité startup + puissance agence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll-scale">
+                    <div class="faq-question">
+                        <div class="question-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="question-content">
+                            <h3>Pourrai-je modifier mon site moi-même après sa mise en ligne ?</h3>
+                            <p class="question-preview">Autonomie et formation</p>
+                        </div>
+                        <div class="question-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p><strong>Absolument !</strong> Nous construisons nos sites avec une interface administrateur simple.</p>
+                            <div class="autonomy-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Formation incluse</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Interface intuitive</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-life-ring"></i>
+                                    <span>Support à la demande</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll-scale">
+                    <div class="faq-question">
+                        <div class="question-icon">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <div class="question-content">
+                            <h3>Quels sont vos tarifs pour un site vitrine ?</h3>
+                            <p class="question-preview">Investissement et options</p>
+                        </div>
+                        <div class="question-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Nos tarifs sont transparents et adaptés à vos besoins. Voici nos formules principales :</p>
+                            <div class="pricing-breakdown">
+                                <div class="pricing-item">
+                                    <span class="price-label">Site vitrine classique</span>
+                                    <span class="price-value">400€</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="price-label">Site vitrine + hébergement 1 an</span>
+                                    <span class="price-value">500€</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="price-label">Hébergement + support client</span>
+                                    <span class="price-value">Sur devis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Blue Star -->
+    <footer class="footer-bluestar">
+        <div class="container">
+            
+            <div class="footer-content-bluestar">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                    <div class="footer-logo-bluestar">
+                        <div class="astronaut-logo">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="logo-text-bluestar">
+                            <span class="logo-main-bluestar">TIRO</span>
+                            <span class="logo-accent-bluestar">NETWORK</span>
+                        </div>
+                    </div>
+                    <p class="footer-description-bluestar">Votre partenaire de croissance digitale. Nous créons des sites web qui vendent pour vous, 24h/24.</p>
+                    <div class="social-links-bluestar">
+                        <a href="https://www.linkedin.com/in/titouan-mouysset" class="social-link-bluestar">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/chocolatxaris" class="social-link-bluestar">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/titouanmyt" class="social-link-bluestar">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation Section -->
+                <div class="footer-nav-section">
+                    <h3 class="footer-title-bluestar">Navigation</h3>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html" class="footer-link-bluestar">Accueil</a></li>
+                        <li><a href="services.html" class="footer-link-bluestar">Services</a></li>
+                        <li><a href="about.html" class="footer-link-bluestar">À propos</a></li>
+                        <li><a href="contact.html" class="footer-link-bluestar">Contact</a></li>
+                        <li><a href="#" class="footer-link-bluestar">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="footer-services-section">
+                    <h3 class="footer-title-bluestar">Services</h3>
+                    <ul class="footer-services-list">
+                        <li><a href="services.html" class="footer-link-bluestar">Création de sites vitrines</a></li>
+                        <li><a href="services.html" class="footer-link-bluestar">Refonte & Optimisation</a></li>
+                        <li><a href="services.html" class="footer-link-bluestar">E-commerce & Funnels</a></li>
+                        <li><a href="services.html" class="footer-link-bluestar">Support Client</a></li>
+                        <li><a href="services.html" class="footer-link-bluestar">SEO & Web Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Section -->
+                <div class="footer-contact-section">
+                    <h3 class="footer-title-bluestar">Contact</h3>
+                    <div class="contact-info-bluestar">
+                        <div class="contact-item-bluestar">
+                            <i class="fas fa-envelope"></i>
+                            <span>titouanmouysset@gmail.com</span>
+                        </div>
+                        <div class="contact-item-bluestar">
+                            <i class="fas fa-phone"></i>
+                            <span>+33 7 66 20 95 01</span>
+                        </div>
+                        <div class="contact-item-bluestar">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>15 boulevard voltaire<br>34340 Marseillan, France</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-bluestar">
+                <div class="footer-bottom-content">
+                    <p class="copyright-bluestar">&copy; 2025 Tiro Network. Tous droits réservés.</p>
+                    <div class="legal-links-bluestar">
+                        <a href="mentions-legales.html" class="legal-link-bluestar">Mentions légales</a>
+                        <a href="gestion-rgpd.html" class="legal-link-bluestar">Gestion RGPD</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="email-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

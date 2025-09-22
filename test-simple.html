@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test EmailJS Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: white;
+        }
+        .test-form {
+            background: #2a2a3e;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #c0c8d8;
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .log {
+            background: #000;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test EmailJS Ultra Simple</h1>
+    
+    <div class="test-form">
+        <h2>Test avec les paramètres minimaux</h2>
+        <button onclick="testEmailJS()">Tester EmailJS</button>
+        <button onclick="testSimpleTemplate()">Test Template Simple</button>
+        <button onclick="testWithMinimalData()">Test Données Minimales</button>
+    </div>
+    
+    <div class="log" id="log">
+        <strong>Log de test :</strong><br>
+        <span id="logContent">En attente...</span>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="email-config.js"></script>
+    <script>
+        // Initialisation d'EmailJS
+        if (typeof EMAIL_CONFIG !== 'undefined') {
+            emailjs.init(EMAIL_CONFIG.PUBLIC_KEY);
+            log('✅ EmailJS initialisé');
+            log('📧 Public Key: ' + EMAIL_CONFIG.PUBLIC_KEY);
+            log('🔧 Service ID: ' + EMAIL_CONFIG.SERVICE_ID);
+            log('📝 Template ID: ' + EMAIL_CONFIG.TEMPLATE_ID);
+        } else {
+            log('❌ Configuration EmailJS non trouvée !');
+        }
+
+        function log(message) {
+            const logContent = document.getElementById('logContent');
+            const timestamp = new Date().toLocaleTimeString();
+            logContent.innerHTML += `[${timestamp}] ${message}<br>`;
+            console.log(message);
+        }
+
+        function testEmailJS() {
+            log('🚀 Test 1: Vérification des services EmailJS...');
+            
+            // Test simple pour vérifier si EmailJS fonctionne
+            emailjs.sendForm(EMAIL_CONFIG.SERVICE_ID, EMAIL_CONFIG.TEMPLATE_ID, {
+                from_name: 'Test',
+                from_email: 'titouanmouysset@gmail.com',
+                message: 'Test simple'
+            })
+            .then(function(response) {
+                log('✅ Test 1 réussi! Status: ' + response.status);
+            })
+            .catch(function(error) {
+                log('❌ Test 1 échoué! Status: ' + error.status);
+                log('❌ Message: ' + error.text);
+                log('❌ Détails: ' + JSON.stringify(error));
+            });
+        }
+
+        function testSimpleTemplate() {
+            log('🚀 Test 2: Template avec données minimales...');
+            
+            const templateParams = {
+                from_name: 'Test Simple',
+                message: 'Message de test'
+            };
+            
+            log('📋 Paramètres: ' + JSON.stringify(templateParams));
+            
+            emailjs.send(EMAIL_CONFIG.SERVICE_ID, EMAIL_CONFIG.TEMPLATE_ID, templateParams)
+            .then(function(response) {
+                log('✅ Test 2 réussi! Status: ' + response.status);
+                log('✅ Réponse: ' + response.text);
+            })
+            .catch(function(error) {
+                log('❌ Test 2 échoué! Status: ' + error.status);
+                log('❌ Message: ' + error.text);
+                log('❌ Erreur complète: ' + JSON.stringify(error, null, 2));
+            });
+        }
+
+        function testWithMinimalData() {
+            log('🚀 Test 3: Données ultra minimales...');
+            
+            // Test avec seulement les variables essentielles
+            const templateParams = {
+                from_name: 'Test',
+                from_email: 'titouanmouysset@gmail.com'
+            };
+            
+            log('📋 Paramètres: ' + JSON.stringify(templateParams));
+            
+            emailjs.send(EMAIL_CONFIG.SERVICE_ID, EMAIL_CONFIG.TEMPLATE_ID, templateParams)
+            .then(function(response) {
+                log('✅ Test 3 réussi! Status: ' + response.status);
+                log('✅ Réponse: ' + response.text);
+            })
+            .catch(function(error) {
+                log('❌ Test 3 échoué! Status: ' + error.status);
+                log('❌ Message: ' + error.text);
+                
+                // Diagnostic détaillé
+                if (error.status === 400) {
+                    log('🔍 Diagnostic: Erreur 400 - Vérifiez:');
+                    log('   - Template ID existe et est correct');
+                    log('   - Variables du template correspondent');
+                    log('   - Service Gmail est activé');
+                } else if (error.status === 401) {
+                    log('🔍 Diagnostic: Erreur 401 - Clé API invalide');
+                } else if (error.status === 403) {
+                    log('🔍 Diagnostic: Erreur 403 - Service non autorisé');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
